@@ -6,28 +6,27 @@ public class GimblingSimulator {
 
 	public static void main(String[] args) {
 
-		int amount = 100;
+		int stake = 100;
 		int bet = 1;
-		int totalAmountAfterBetting;
+		int totalstakeAfterBetting;
 
 		System.out.println("Welcome to the Gambler programme....");
-		System.out.println("total amount of the gambler = " + amount);
-		System.out.println("The gambler start with the amount = " + bet);
+		System.out.println("Gambler Stake of Everyday = " + stake);
+		System.out.println("Gambler Bet of Every Game = " + bet);
 
-		Random random = new Random();
-		int betting = random.nextInt(1);
+		float betting = (float) Math.random() % 2;
 
-		if (betting <= 0.5) {
+		if (betting >= 0.5) {
 
 			System.out.println("Gambler won the bet...");
-			totalAmountAfterBetting = amount + bet;
-			System.out.println("Gambler's total amount = " + totalAmountAfterBetting);
+			totalstakeAfterBetting = stake + bet;
+			System.out.println("Gambler's total stake = " + totalstakeAfterBetting);
 
-		} else {
+		} else if (betting <= 0.5) {
 
 			System.out.println("Gambler lost the bet...");
-			totalAmountAfterBetting = amount - bet;
-			System.out.println("Gambler's total amount = " + totalAmountAfterBetting);
+			totalstakeAfterBetting = stake - bet;
+			System.out.println("Gambler's total stake = " + totalstakeAfterBetting);
 
 		}
 
