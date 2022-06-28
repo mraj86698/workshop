@@ -6,22 +6,30 @@ public class GimblingSimulator {
 
 	public static void main(String[] args) {
 
-		int amount = 100;
+		int stake = 100;
 		int bet = 1;
-		int totalAmountAfterBetting;
+		int totalAmountAfterBetting,stakeincrease = 1, maxStake = 150, minStake = 50;;
 
-		for (amount = 100; amount < 150; amount++) {
-			totalAmountAfterBetting = amount + bet;
-			System.out.println("Gambler won the bet");
-			System.out.println("Gambler's total amount = " + totalAmountAfterBetting);
-			System.out.println("Gambler's Would not Resign");
+		if(stake > maxStake && stake < minStake) {
+//			double betting=Math.random();
+			float betting = (float) Math.random()%2;
+			if(betting <=0.5) {
+				System.out.println("gambler won the bets");
+				totalAmountAfterBetting=stake+bet;
+				System.out.println("amount is" +" "+ totalAmountAfterBetting);
+				System.out.println("The player has retired with "+stake+" for the day");
+			}
+			else {
+				System.out.println("gambler lost the bets");
+				totalAmountAfterBetting=stake-bet;
+				System.out.println("amount is"+" "+totalAmountAfterBetting);
+			}
+
+
+
 		}
-		for (amount = 100; amount > 50; amount--) {
-			totalAmountAfterBetting = amount - bet;
-			System.out.println("Gambler lost the bet");
-			System.out.println("Gambler's total amount = " + totalAmountAfterBetting);
-			System.out.println("Gambler's would resign");
-		}
+
 	}
-
 }
+
+
